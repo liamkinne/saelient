@@ -1,6 +1,6 @@
 # Saelient: SAE-J1939 in Rust
 
-Saelient provides a helper interface on top of `embedded_can` traits compatible with `no-std` targets.
+Saelient provides a helper interface on top of [`embedded_can`](https://crates.io/crates/embedded-can) traits compatible with `no-std` targets.
 
 ## Principles
 
