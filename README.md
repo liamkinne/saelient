@@ -6,7 +6,7 @@ Saelient provides a helper interface on top of [`embedded_can`](https://crates.i
 
 Run the following Cargo command in your project directory:
 
-```
+```shell
 cargo add saelient
 ```
 
