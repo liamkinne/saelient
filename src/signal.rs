@@ -1,6 +1,7 @@
 use std::convert::TryFrom;
 
 /// Transmitted values for distrete parameters (measured).
+#[derive(Debug, PartialEq)]
 pub enum Parameter {
     Disabled = 0x0,
     Enabled = 0x1,
@@ -35,6 +36,7 @@ impl TryFrom<u8> for Parameter {
 }
 
 /// Transmitted values for control commands (status).
+#[derive(Debug, PartialEq)]
 pub enum Command {
     Disable = 0x0,
     Enable = 0x1,
