@@ -2,6 +2,7 @@
 name = "saelient"
 description = "SAE-J1939 support library"
 repository = "https://github.com/liamkinne/saelient"
+documentation = "https://docs.rs/saelient"
 categories = ["no-std", "embedded"]
 version = "0.1.0"
 edition = "2021"
