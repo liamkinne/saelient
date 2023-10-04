@@ -2,6 +2,14 @@
 
 Saelient provides a helper interface on top of [`embedded_can`](https://crates.io/crates/embedded-can) traits compatible with `no-std` targets.
 
+## Getting Started
+
+Run the following Cargo command in your project directory:
+
+```
+cargo add saelient
+```
+
 ## Principles
 
 - Zero-copy wherever possible by creating views on data rather than mutating or copying.
