@@ -43,6 +43,7 @@ impl Priority for StandardId {
     }
 }
 
+/// Extended 29-bit identifier.
 pub trait Extended {
     /// Destination address.
     fn destination_address(&self) -> Option<u8>;
