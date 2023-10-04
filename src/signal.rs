@@ -68,3 +68,22 @@ impl Default for Command {
         Self::NoAction
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn param_failed_conversion() {
+        let parameter = Parameter::try_from(99);
+
+        assert_eq!(parameter, Err(()))
+    }
+
+    #[test]
+    fn cmd_failed_conversion() {
+        let command = Command::try_from(99);
+
+        assert_eq!(command, Err(()))
+    }
+}
