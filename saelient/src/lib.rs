@@ -9,6 +9,7 @@
 
 pub mod identifier;
 pub mod name;
+pub mod prelude;
 pub mod signal;
 pub mod slot;
 

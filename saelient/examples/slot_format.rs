@@ -1,5 +1,5 @@
+use saelient::prelude::*;
 use saelient::slot::SAEaa01;
-use saelient::slot::Slot;
 
 fn main() {
     let slot = SAEaa01::new(20.0).unwrap();
