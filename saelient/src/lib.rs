@@ -11,3 +11,8 @@ pub mod identifier;
 pub mod name;
 pub mod signal;
 pub mod slot;
+
+#[cfg(feature = "float-32")]
+pub type Float = f32;
+#[cfg(feature = "float-64")]
+pub type Float = f64;

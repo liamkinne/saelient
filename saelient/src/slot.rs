@@ -1,7 +1,4 @@
-#[cfg(feature = "float-32")]
-type Float = f32;
-#[cfg(feature = "float-64")]
-type Float = f64;
+use crate::Float;
 
 /// Scaling limit offset transfer function.
 pub trait Slot {
