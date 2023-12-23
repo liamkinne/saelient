@@ -1,6 +1,7 @@
 [package]
 name = "saelient"
 description = "SAE-J1939 support library"
+readme = "../README.md"
 repository = "https://github.com/liamkinne/saelient"
 documentation = "https://docs.rs/saelient"
 categories = ["no-std", "embedded"]
