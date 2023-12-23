@@ -11,4 +11,18 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+defmt = { version = "0.3.5", optional = true }
 embedded-can = "0.4.1"
+
+[features]
+default = ["float-64"]
+
+float-32 = []
+float-64 = []
+
+std = []
+defmt = ["dep:defmt"]
+
+[[example]]
+name = "slot_format"
+required-features = ["std"]

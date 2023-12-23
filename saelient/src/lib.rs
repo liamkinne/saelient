@@ -10,3 +10,4 @@
 pub mod identifier;
 pub mod name;
 pub mod signal;
+pub mod slot;
