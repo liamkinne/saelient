@@ -25,6 +25,7 @@ pub trait Slot {
     fn offset() -> Float;
 }
 
+/// Generates a `Slot` implementation.
 macro_rules! slot {
     ($name:ident, $type:expr, $scaling:expr, $limits:expr, $unit:expr) => {
         #[doc = $type]
