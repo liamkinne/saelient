@@ -1,3 +1,5 @@
+//! Transfer functions.
+
 use crate::Float;
 
 /// Scaling limit offset transfer function.

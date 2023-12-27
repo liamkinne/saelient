@@ -1,3 +1,5 @@
+//! Network management.
+
 trait NAME {
     /// Identity number.
     fn identity(&self) -> u32;

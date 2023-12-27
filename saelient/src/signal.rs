@@ -1,3 +1,5 @@
+//! Parameter signals.
+
 use core::ops::RangeInclusive;
 use std::convert::TryFrom;
 

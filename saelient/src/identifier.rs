@@ -1,3 +1,5 @@
+//! Message identifier.
+
 use embedded_can::{ExtendedId, Id, StandardId};
 
 pub trait SourceAddress {
