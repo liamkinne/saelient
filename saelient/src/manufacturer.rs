@@ -1,5 +1,5 @@
 /// Returns the manufacturer name for a given id.
-pub const fn manufacturer(id: u16) -> Option<&'static str> {
+pub const fn manufacturer_name(id: u16) -> Option<&'static str> {
     // sourced from J1939DA JAN23
     Some(match id {
         0 => "Reserved",
