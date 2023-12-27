@@ -8,7 +8,7 @@ pub trait Slot {
         Self: Sized;
 
     /// Construct a `Slot` from the raw value.
-    fn from_raw(raw: u32) -> Option<Self>
+    fn from_raw(raw: Float) -> Option<Self>
     where
         Self: Sized;
 
@@ -46,8 +46,9 @@ macro_rules! slot {
             }
 
             #[inline]
-            fn from_raw(raw: u32) -> Option<Self> {
-                let value = ((raw as f64) * $name::scaling()) + $name::offset();
+            fn from_raw(raw: Float) -> Option<Self> {
+                let value =
+                    ((raw as Float) * $name::scaling()) + $name::offset();
 
                 let (min, max) = $name::limits();
 
