@@ -1347,12 +1347,12 @@ mod tests {
     #[test]
     fn sample() {
         // limit cases
-        assert_eq!(manufacturer(0), Some("Reserved"));
-        assert_eq!(manufacturer(9999), None);
+        assert_eq!(manufacturer_name(0), Some("Reserved"));
+        assert_eq!(manufacturer_name(9999), None);
 
         // some cases selected at random
-        assert_eq!(manufacturer(617), Some("Zero Emission Vehicles"));
-        assert_eq!(manufacturer(1859), Some("Kvasar AB"));
-        assert_eq!(manufacturer(1863), Some("Thomas G. Faria Co."));
+        assert_eq!(manufacturer_name(617), Some("Zero Emission Vehicles"));
+        assert_eq!(manufacturer_name(1859), Some("Kvasar AB"));
+        assert_eq!(manufacturer_name(1863), Some("Thomas G. Faria Co."));
     }
 }
