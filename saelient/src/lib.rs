@@ -8,6 +8,7 @@
 //! message bodies based on identifier metadata.
 
 pub mod identifier;
+pub mod manufacturer;
 pub mod name;
 pub mod prelude;
 pub mod signal;
