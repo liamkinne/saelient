@@ -102,22 +102,63 @@ impl TryFrom<u8> for IndustryGroup {
 mod tests {
     use super::*;
 
-    #[test]
-    fn name_unpacking() {
-        // example taken from J1939-81 4.2.1.1
-        let name = Name([
-            0b00001110, 0b10011001, 0b10100010, 0b00000011, 0b00011001,
-            0b10000000, 0b00001000, 0b10110010,
-        ]);
+    // example taken from J1939-81 4.2.1.1
+    const EXAMPLE: Name = Name([
+        0b00001110, 0b10011001, 0b10100010, 0b00000011, 0b00011001, 0b10000000,
+        0b00001000, 0b10110010,
+    ]);
 
-        assert_eq!(name.identity(), 170254);
-        assert_eq!(name.manufacturer(), 29);
-        assert_eq!(name.ecu_instance(), 1);
-        assert_eq!(name.function_instance(), 3);
-        assert_eq!(name.function(), Some(128));
-        assert_eq!(name.vehicle_system(), Some(4));
-        assert_eq!(name.vehicle_system_instance(), 2);
-        assert_eq!(name.industry_group(), Some(IndustryGroup::Construction));
-        assert_eq!(name.arbitrary_address_capable(), true);
+    #[test]
+    fn example_identity() {
+        // see J1939-81 4.2.1.1
+        assert_eq!(EXAMPLE.identity(), 170254);
+    }
+
+    #[test]
+    fn example_manufacturer() {
+        // see J1939-81 4.2.1.1
+        assert_eq!(EXAMPLE.manufacturer(), 29);
+    }
+
+    #[test]
+    fn example_ecu_instance() {
+        // see J1939-81 4.2.1.1
+        assert_eq!(EXAMPLE.ecu_instance(), 1);
+    }
+
+    #[test]
+    fn example_function_instance() {
+        // see J1939-81 4.2.1.1
+        assert_eq!(EXAMPLE.function_instance(), 3);
+    }
+
+    #[test]
+    fn example_function() {
+        // see J1939-81 4.2.1.1
+        assert_eq!(EXAMPLE.function(), Some(128));
+    }
+
+    #[test]
+    fn example_vehicle_system() {
+        // see J1939-81 4.2.1.1
+        assert_eq!(EXAMPLE.vehicle_system(), Some(4));
+    }
+
+    #[test]
+    fn example_vehicle_system_instance() {
+        // see J1939-81 4.2.1.1
+        assert_eq!(EXAMPLE.vehicle_system_instance(), 2);
+    }
+
+    #[test]
+    fn example_industry_group() {
+        // see J1939-81 4.2.1.1
+        assert_eq!(EXAMPLE.industry_group(), Some(IndustryGroup::Construction));
+    }
+
+    #[test]
+    fn example_arbitrary_address_capable() {
+        // see J1939-81 4.2.1.1
+        assert_eq!(EXAMPLE.arbitrary_address_capable(), true);
     }
 }
