@@ -85,12 +85,16 @@ pub trait Signal<T> {
     /// Not available/requested indicator value range.
     const NOT_AVAILABLE_RANGE: RangeInclusive<T>;
 
+    /// Value is within the valid range.
     fn is_valid(&self) -> bool;
 
-    fn is_specific_indicator(&self) -> bool;
+    /// Value is within the specific indicator range.
+    fn is_specific(&self) -> bool;
 
+    /// Value is within the error indicator range.
     fn is_error(&self) -> bool;
 
+    /// Valid is within the not available indicator range.
     fn is_not_available(&self) -> bool;
 }
 
@@ -113,7 +117,7 @@ macro_rules! signal {
                 }
 
                 #[inline]
-                fn is_specific_indicator(&self) -> bool {
+                fn is_specific(&self) -> bool {
                     Self::VALID_RANGE.contains(&self.0)
                 }
 
