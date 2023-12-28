@@ -2,7 +2,7 @@
 
 use bitfield::bitfield;
 bitfield! {
-    /// NAME Field
+    /// NAME Bitfield
     ///
     /// See SAEJ1939-81 4.2.1.1
     #[derive(Debug, Clone, Copy)]
@@ -41,6 +41,7 @@ bitfield! {
 pub struct Name(Fields);
 
 impl Name {
+    /// Create a new `Name` instance.
     pub fn new(
         identity: u32,
         manufacturer_code: u16,
