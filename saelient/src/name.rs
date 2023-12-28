@@ -5,8 +5,8 @@ bitfield! {
     /// NAME Field
     ///
     /// See SAEJ1939-81 4.2.1.1
+    #[derive(Debug, Clone, Copy)]
     struct Fields(u64);
-    impl Debug;
     /// Identity Number.
     #[inline]
     u32, identity, set_identity: 20, 0;
@@ -37,6 +37,7 @@ bitfield! {
 }
 
 /// NAME Definition
+#[derive(Debug, Clone, Copy)]
 pub struct Name(Fields);
 
 impl Name {
