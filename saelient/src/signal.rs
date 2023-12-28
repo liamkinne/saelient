@@ -87,6 +87,14 @@ pub trait Signal<T> {
     /// Not available/requested indicator value range.
     const NOT_AVAILABLE_RANGE: RangeInclusive<T>;
 
+    /// Creates a new instance from the given value.
+    fn new(value: T) -> Option<Self>
+    where
+        Self: Sized;
+
+    /// Gets the value of the signal.
+    fn as_raw(&self) -> T;
+
     /// Value is within the valid range.
     fn is_valid(&self) -> bool;
 
@@ -112,6 +120,18 @@ macro_rules! signal {
                 const SPECIFIC_RANGE: RangeInclusive<$TYPE> = $specific;
                 const ERROR_RANGE: RangeInclusive<$TYPE> = $error;
                 const NOT_AVAILABLE_RANGE: RangeInclusive<$TYPE> = $notavailable;
+
+                fn new(value: $TYPE) -> Option<Self> {
+                    if (&value <= Self::NOT_AVAILABLE_RANGE.end()) {
+                        Some(Self(value))
+                    } else {
+                        None
+                    }
+                }
+
+                fn as_raw(&self) -> $TYPE {
+                    self.0
+                }
 
                 #[inline]
                 fn is_valid(&self) -> bool {
