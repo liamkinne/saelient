@@ -165,6 +165,7 @@ impl Name {
 
 /// Industry group assignment.
 #[derive(Debug, PartialEq, Eq)]
+#[repr(u8)]
 pub enum IndustryGroup {
     /// Global, applies to all.
     Global = 0,
