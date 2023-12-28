@@ -120,17 +120,17 @@ macro_rules! signal {
 
                 #[inline]
                 fn is_specific(&self) -> bool {
-                    Self::VALID_RANGE.contains(&self.0)
+                    Self::SPECIFIC_RANGE.contains(&self.0)
                 }
 
                 #[inline]
                 fn is_error(&self) -> bool {
-                    Self::VALID_RANGE.contains(&self.0)
+                    Self::ERROR_RANGE.contains(&self.0)
                 }
 
                 #[inline]
                 fn is_not_available(&self) -> bool {
-                    Self::VALID_RANGE.contains(&self.0)
+                    Self::NOT_AVAILABLE_RANGE.contains(&self.0)
                 }
             }
         }
